@@ -1,12 +1,18 @@
 import axios from "axios";
 
-const SWAPI_ROOT = "https://swapi.dev/api/";
-const SWAPI_PEOPLE = "people";
+export const getApiResource = async (URL) => {
+    try {
+        const res = await axios(URL);
 
-export const getApiResource = (URL) => {
-    axios.get(URL)
-        .then(response => console.log(response.data))
-        .catch(error => console.log(error.message))
+        if (res.status !== 200) {
+            console.error("Could not fetch.", res.status);
+        }
+
+        return await res.data;
+    }
+    catch (error) {
+        console.error("Could not fetch.", error.message);
+
+        return false;
+    }
 };
-
-getApiResource(SWAPI_ROOT + SWAPI_PEOPLE);

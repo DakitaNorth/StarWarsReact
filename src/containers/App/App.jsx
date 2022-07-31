@@ -1,10 +1,10 @@
-import cn from 'classnames';
+import PeoplePage from '../peoplePage/peoplePage';
+
 import './App.module.css';
 
 const App = () => {
   return (
-    <div className="App">
-    </div> 
+    <PeoplePage />
   );
 }
 
