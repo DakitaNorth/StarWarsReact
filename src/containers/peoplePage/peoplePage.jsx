@@ -4,11 +4,13 @@ import { API_PEOPLE } from "../../constans/api";
 import { getApiResource } from "../../utils/network";
 import { getPeopleId, getPeopleImage } from "../services/getPeopleData";
 
+import { withErrorApi } from "../../hoc-helpers/withErrorApi";
+
 import PeopleList from "../../components/peoplePage/peopleList/peopleList";
 
 import styles from "./peoplePage.module.css";
 
-const PeoplePage = () => {
+const PeoplePage = ({ setErrorApi }) => {
 
     const [people, setPeople] = useState([]);
 
@@ -19,18 +21,25 @@ const PeoplePage = () => {
     const getResource = async (URL) => {
         const res = await getApiResource(URL);
 
-        const peopleList = res.results.map(({ name, url }) => {
-            const id = getPeopleId(url);
-            const img = getPeopleImage(id);
 
-            return {
-                id,
-                name,
-                img
-            }
-        });
+        if (res) {
+            const peopleList = res.results.map(({ name, url }) => {
+                const id = getPeopleId(url);
+                const img = getPeopleImage(id);
 
-        setPeople(peopleList);
+                return {
+                    id,
+                    name,
+                    img
+                }
+            });
+
+            setPeople(peopleList);
+            setErrorApi(false);
+        }
+        else {
+            setErrorApi(true);
+        }
     };
 
     const peopleStandart = people.map(({ id, name, img }) => {
@@ -46,6 +55,7 @@ const PeoplePage = () => {
 
     return (
         <>
+            <h1>Navigation</h1>
             <ul className={styles.list__container}>
                 {peopleStandart}
             </ul>
@@ -53,4 +63,4 @@ const PeoplePage = () => {
     );
 }
 
-export default PeoplePage;
+export default withErrorApi(PeoplePage);
