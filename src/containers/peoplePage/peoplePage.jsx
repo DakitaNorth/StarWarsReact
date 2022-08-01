@@ -1,12 +1,10 @@
 import { useState, useEffect } from "react";
 
-import { API_PEOPLE } from "@constans/api";
+import { withErrorApi } from "@hoc-helpers/withErrorApi";
+import PeopleList from "@components/peoplePage/peopleList/peopleList";
 import { getApiResource } from "@utils/network";
 import { getPeopleId, getPeopleImage } from "@services/getPeopleData";
-
-import { withErrorApi } from "@hoc-helpers/withErrorApi";
-
-import PeopleList from "@components/peoplePage/peopleList/peopleList";
+import { API_PEOPLE } from "@constans/api";
 
 import styles from "./peoplePage.module.css";
 

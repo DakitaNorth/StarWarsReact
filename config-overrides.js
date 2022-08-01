@@ -8,7 +8,9 @@ module.exports = function override(config, env) {
         "@hoc-helpers": "src/hoc-helpers",
         "@services": "src/services",
         "@styles": "src/styles",
-        "@utils": "src/utils"
+        "@utils": "src/utils",
+        "@routes": "src/routes",
+        "@static": "src/static",
     })(config);
     return config;
 };
