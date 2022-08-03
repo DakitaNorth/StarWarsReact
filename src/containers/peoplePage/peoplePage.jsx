@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 
 import { withErrorApi } from "@hoc-helpers/withErrorApi";
+
 import PeopleList from "@components/peoplePage/peopleList/peopleList";
+
 import { getApiResource } from "@utils/network";
 import { getPeopleId, getPeopleImage } from "@services/getPeopleData";
 import { API_PEOPLE } from "@constans/api";

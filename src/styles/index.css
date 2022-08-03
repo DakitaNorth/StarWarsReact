@@ -16,6 +16,7 @@
   --font-family-main: sans-serif;
 
   --font-size-main: 16px;
+  --font-size-subheader: 18px;
   --font-size-header: 26px;
 
   --width-max: 1200px;
@@ -23,6 +24,10 @@
   --border-radius-small: 3px;
 
   --text-shadow-yellow:
+    0 0 2px var(--color-white),
+    0 0 40px var(--color-yellow);
+
+  --text-shadow-blue:
     0 0 2px var(--color-white),
     0 0 40px var(--color-blue);
 
