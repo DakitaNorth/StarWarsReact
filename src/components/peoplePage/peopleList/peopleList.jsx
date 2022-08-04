@@ -1,12 +1,14 @@
+import { Link } from "react-router-dom";
+
 import styles from "./peopleList.module.css";
 
-const PeopleList = props => {
+const PeopleList = ({ id, name, img }) => {
     return (
-        <li key={props.id} className={styles.list__item}>
-            <a href="#">
-                <img className={styles.person__photo} src={props.img} alt={props.name} />
-                <span className={styles.person__name}>{props.name}</span>
-            </a>
+        <li key={id} className={styles.list__item}>
+            <Link to={`/people/${id}`}>
+                <img className={styles.person__photo} src={img} alt={name} />
+                <span className={styles.person__name}>{name}</span>
+            </Link>
         </li>
     );
 }

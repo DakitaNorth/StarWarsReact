@@ -68,7 +68,7 @@ const PeoplePage = ({ setErrorApi }) => {
 
     return (
         <>
-            <h1>Navigation</h1>
+            <h1 className="visually-hidden">Navigation</h1>
             <PeopleNavigation
                 getResource={getResource}
                 counterPage={counterPage}

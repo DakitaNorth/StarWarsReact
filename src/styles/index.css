@@ -6,9 +6,12 @@
   --color-blue: #6a83fb;
   --color-violet: #ae72c2;
 
+  --spacing-ultrasmall: 5px;
   --spacing-small: 10px;
   --spacing-medium: 20px;
   --spacing-large: 30px;
+
+  --margin-list: 7px;
 
   --transition: .4s;
 
@@ -23,6 +26,7 @@
   --width-max: 1200px;
 
   --border-radius-small: 3px;
+  --border-radius-medium: 5px;
 
   --text-shadow-yellow:
     0 0 2px var(--color-white),
@@ -57,6 +61,22 @@ h1 {
   text-align: center;
   text-shadow: 0 0 2px var(--color-black);
   transition: color var(--transition);
+}
+
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(100%);
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 img {
