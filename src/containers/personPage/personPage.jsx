@@ -9,6 +9,7 @@ import { getPeopleImage } from "@services/getPeopleData";
 
 import PersonInfo from "@components/personPage/personInfo/personInfo";
 import PersonPhoto from "@components/personPage/personPhoto/personPhoto";
+import PersonLinkBack from "@components/personPage/personLinkBack/personLinkBack";
 
 import styles from "./personPage.module.css";
 
@@ -49,14 +50,17 @@ const PersonPage = ({ setErrorApi }) => {
     }, []);
 
     return (
-        <div className={styles.wrapper}>
-            <h1 className="visually-hidden">Страница персонажа</h1>
-            <span className={styles.person__name}>{personName}</span>
-            <div className={styles.container}>
-                <PersonPhoto personPhoto={personPhoto} personName={personName} />
-                {personInfo && <PersonInfo personInfo={personInfo} />}
+        <>
+            <PersonLinkBack />
+            <div className={styles.wrapper}>
+                <h1 className="visually-hidden">Страница персонажа</h1>
+                <span className={styles.person__name}>{personName}</span>
+                <div className={styles.container}>
+                    <PersonPhoto personPhoto={personPhoto} personName={personName} />
+                    {personInfo && <PersonInfo personInfo={personInfo} />}
+                </div>
             </div>
-        </div>
+        </>
     );
 }
 

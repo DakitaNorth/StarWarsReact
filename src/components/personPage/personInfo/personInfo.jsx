@@ -5,8 +5,8 @@ const PersonInfo = ({ personInfo }) => {
     const personInfoStandart = personInfo.map(({ title, data }) => (
         data !== "n/a" && (
             <li key={title} className={styles.list__item}>
-                <span className={styles.item__title}>{title}:</span>
-                <span> {data}</span>
+                <span className={styles.item__title}>{title}</span>
+                <span>: {data}</span>
             </li>
         )
     ));
