@@ -6,6 +6,7 @@
   --color-blue: #6a83fb;
   --color-violet: #ae72c2;
 
+  --spacing-small: 10px;
   --spacing-medium: 20px;
   --spacing-large: 30px;
 
@@ -53,6 +54,7 @@ h1 {
   font-size: var(--font-size-header);
   line-height: 1.7;
   color: var(--theme-default-header);
+  text-align: center;
   text-shadow: 0 0 2px var(--color-black);
   transition: color var(--transition);
 }
