@@ -34,3 +34,11 @@ export const getApiResource = async (URL) => {
         return false;
     }
 };
+
+export const makeConcurrentRequest = async (URL) => {
+    const res = await Promise.all(URL.map(res => {
+        return axios(res).then(res => res.data); 
+    }));
+
+    return res;
+};
