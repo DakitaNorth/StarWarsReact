@@ -55,17 +55,6 @@ const PeoplePage = ({ setErrorApi }) => {
         }
     };
 
-    const peopleStandart = people.map(({ id, name, img }) => {
-        return (
-            <PeopleList
-                key={id}
-                id={id}
-                name={name}
-                img={img}
-            />
-        )
-    });
-
     return (
         <>
             <h1 className="visually-hidden">Navigation</h1>
@@ -76,7 +65,7 @@ const PeoplePage = ({ setErrorApi }) => {
                 nextPage={nextPage}
             />
             <ul className={styles.list__container}>
-                {peopleStandart}
+                <PeopleList people={people} />
             </ul>
         </>
     );

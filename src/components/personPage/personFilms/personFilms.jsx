@@ -14,7 +14,6 @@ const PersonFilms = ({ personFilms }) => {
             const response = await makeConcurrentRequest(filmsHTTPS);
 
             setFilmsName(response);
-            console.log(filmsName);
         })();
     }, [personFilms]);
 

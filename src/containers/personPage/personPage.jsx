@@ -1,5 +1,6 @@
 import React, { useState, useEffect, Suspense } from "react";
 import { useParams } from "react-router";
+import { useSelector } from "react-redux";
 
 import { API_PERSON } from "@constans/api";
 
@@ -20,14 +21,19 @@ const PersonPage = ({ setErrorApi }) => {
 
     const { id } = useParams();
 
+    const storeData = useSelector(state => state.favoriteReducer);
+
     const [personInfo, setPersonInfo] = useState([]);
     const [personName, setPersonName] = useState("");
     const [personPhoto, setPersonPhoto] = useState(null);
     const [personFilms, setPersonFilms] = useState([]);
+    const [personFavorite, setPersonFavorite] = useState(false);
 
     useEffect(() => {
         (async () => {
             const res = await getApiResource(`${API_PERSON}/${id}/`);
+
+            storeData[id] ? setPersonFavorite(true) : setPersonFavorite(false);
 
             if (res) {
                 setErrorApi(false);
@@ -59,8 +65,16 @@ const PersonPage = ({ setErrorApi }) => {
                 <h1 className="visually-hidden">Страница персонажа</h1>
                 <span className={styles.person__name}>{personName}</span>
                 <div className={styles.container}>
-                    <PersonPhoto personPhoto={personPhoto} personName={personName} />
+                    <PersonPhoto
+                        personPhoto={personPhoto}
+                        personName={personName}
+                        personId={id}
+                        personFavorite={personFavorite}
+                        setPersonFavorite={setPersonFavorite}
+                    />
+
                     {personInfo && <PersonInfo personInfo={personInfo} />}
+                    
                     {personFilms && (
                         <Suspense fallback={<UiLoading theme="white" isShadow />}>
                             <PersonFilms personFilms={personFilms} />
