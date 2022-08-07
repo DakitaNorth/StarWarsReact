@@ -1,5 +1,7 @@
 # 🪐 Star Wars React
 
+This is a pet-project created on the basis of React technology, using Redux and other libraries.
+
 ## 🐗 Lighthouse Metrics Performance
 ![Alt-текст](https://raw.githubusercontent.com/dev-pandaren/react-star-wars/__temp__/_temp/readme/lighthouse.png)
 
