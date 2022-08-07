@@ -38,6 +38,10 @@ const routesConfig = [
     {
         path: "/search",
         element: <SearchPage />
+    },
+    {
+        path: "/StarWarsReact/",
+        element: <HomePage />
     }
 ];
 
