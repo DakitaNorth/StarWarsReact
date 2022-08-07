@@ -28,12 +28,16 @@
     transition: color var(--transition);
 }
 
-.list__container a:hover {
-
-}
-
 .list__container :global(a.active) {
     border: 2px solid var(--color-violet);
     color: var(--color-violet);
     text-shadow: none
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    margin-right: var(--spacing-large);
+    object-fit: cover;
+    object-position: center center;
 }

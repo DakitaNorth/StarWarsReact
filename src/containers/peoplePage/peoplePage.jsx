@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 import { withErrorApi } from "@hoc-helpers/withErrorApi";
 
@@ -64,9 +64,7 @@ const PeoplePage = ({ setErrorApi }) => {
                 prevPage={prevPage}
                 nextPage={nextPage}
             />
-            <ul className={styles.list__container}>
-                <PeopleList people={people} />
-            </ul>
+            <PeopleList people={people} />
         </>
     );
 }
