@@ -3,7 +3,9 @@
 
 ## 🦄 API
 
-In the project directory, you can run:
+[In the project directory, you can run:](https://swapi.dev (основное API)
+https://swapi.py4e.com (запасное API - если основное не работает)
+https://starwars-visualguide.com (изображения для API))
 
 ### `npm start`
 
