@@ -1,8 +1,0 @@
-.comment {
-    font-size: var(--font-size-header);
-    line-height: 1.7;
-    color: var(--color-white);
-    text-align: center;
-    text-shadow: 0 0 2px var(--color-black);
-    transition: color var(--transition);
-}
